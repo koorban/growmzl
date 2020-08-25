@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
@@ -13,6 +13,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import Grid from '@material-ui/core/Grid';
 import MenuFlex from '../core/MenuFlex';
+import { create } from './api.contact';
 
 const useStyles = makeStyles({
     formControl: {
@@ -65,9 +66,9 @@ export default function Contact(){
         console.log(newContact)
         create(newContact).then((data) => {
             if(data.error) {
-                setValues({ ...info, error: data.error})
+                setInfo({ ...info, error: data.error})
             } else {
-                setValues({ ...info, error: '', redirect: true})
+                setInfo({ ...info, error: '', redirect: true})
             }
         })
     };
