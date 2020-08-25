@@ -49,7 +49,7 @@ const UseStyles = makeStyles(theme => ({
     margin: {
         margin: theme.spacing(1)
     }
-}))
+}));
 
 export default function AddProduct() {
     const classes = UseStyles();
