@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -14,6 +13,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Grid from '@material-ui/core/Grid';
 import MenuFlex from '../core/MenuFlex';
 import { create } from './api.contact';
+import Dialogue from './Dialogue';
 
 const useStyles = makeStyles({
     formControl: {
@@ -73,8 +73,13 @@ export default function Contact(){
         })
     };
 
+    const message = `Hello ${info.first_name}. Thank you for contacting us in regards to ${info.reason}. Our team will respond shortly`;
+    const title = 'Thanks for contacting us!'
+
     if (info.redirect) {
-        return (<Redirect to={'/'}/>)
+        return (
+            <Dialogue message={message} title={title}/>
+        )
     }
     return (
         <>
