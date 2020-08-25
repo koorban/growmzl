@@ -32,7 +32,7 @@ export default function AlertDialogSlide(props) {
         <DialogTitle id="alert-dialog-slide-title">{props.title}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            {props.message}
+            {props.test}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -45,4 +45,4 @@ export default function AlertDialogSlide(props) {
       </Dialog>
     </div>
   );
-}
+};

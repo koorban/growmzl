@@ -11,7 +11,7 @@ const createUser = async (newUser) => {
         return response.json();
     } catch(err) {
         return console.log(err)
-    };
+    }
 };
 
 export { createUser }

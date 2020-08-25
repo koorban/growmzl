@@ -13,6 +13,7 @@ import template from './../template.js';
 import userRoutes from './../routes/user.routes.js';
 import authRoutes from './../routes/auth.routes.js';
 import productRoutes from './../routes/product.routes';
+import contactRoutes from './../routes/contact.routes';
 
 //modules for server side rendering
 import React from 'react';
@@ -41,6 +42,7 @@ app.use(cors());
 
 app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')));
 
+app.use('/', contactRoutes);
 app.use('/products', productRoutes);
 app.use('/api', userRoutes);
 app.use('/auth', authRoutes);
