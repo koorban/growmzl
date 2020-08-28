@@ -8,12 +8,12 @@ import CompanyTitle from './core/CompanyTitle';
 import Home from './core/Home';
 import SignUp from './components/Signup';
 import Upload from './components/Upload';
-
 import Products from './components/Products';
 import AllProducts from './components/AllProducts';
 import ProductInfo from './components/ProductInfo';
 import Contact from './components/Contact';
 import About from './components/About';
+import SignIn from './components/SignIn';
 
 export default function MainRouter(){
     return (<div>
@@ -22,6 +22,7 @@ export default function MainRouter(){
       <Footer/>
       <Switch>
         <Route exact path="/" component={Home}/>
+        <Route exact path="/signin" component={SignIn}/>
         <Route exact path="/signup" component={SignUp}/>
         <Route exact path="/upload" component={Upload}/>
         <Route exact path="/contact" component={Contact}/>
