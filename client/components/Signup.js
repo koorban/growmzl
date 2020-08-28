@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
@@ -95,8 +96,16 @@ export default function Signup() {
                 <TextField label="Last Name" value={values.last_name} onChange={handleChange('last_name')} className={classes.textField} margin="normal"/>
                 <TextField label="Email" value={values.email} onChange={handleChange('email')} className={classes.textField} margin="normal"/>
                 <TextField label="Password" value={values.password} onChange={handleChange('password')} className={classes.textField} margin="normal"/>
-                <br/>
-                <Button color="primary" variant="contained" onClick={clickSubmit}>Sign up</Button>
+                <br/>   
+                {
+                    values.error && (<Typography component="p" color="error">
+                    <Icon color="error">error</Icon>
+                    {values.error}
+                    </Typography>)
+                }
+                <CardActions>
+                    <Button color="primary" variant="contained" onClick={clickSubmit}>Sign up</Button>
+                </CardActions>
             </Card>
         </div>
     );
