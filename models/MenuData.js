@@ -24,8 +24,8 @@ const MenuData = [
       url: "/signup"
     },
     {
-      title: "Upload",
-      url: "/upload"
+      title: "Sign In",
+      url: "/signin"
     }
 ];
 
