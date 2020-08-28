@@ -1,9 +1,11 @@
-import User from './../models/user.models';
+import User from '../models/user.models';
 import jwt, { sign } from 'jsonwebtoken';
-import config from './../config/config';
+import config from '../config/config';
 import expressJwt from 'express-jwt';
 
 const signIn = async (req, res) => {
+    console.log(req.body.email);
+    console.log(req.body.password);
     try {
         let user = await User.findOne({
           "email" : req.body.email
