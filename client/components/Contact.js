@@ -90,7 +90,7 @@ export default function Contact(){
                         Contact Us
                     </Typography>
                 </Grid>
-                <Grid item xs={6} className={classes.spacing}>
+                <Grid item xs={12} className={classes.spacing}>
                     <Card>
                         <Typography variant='h4' component='h2' className={classes.title}>
                             Contact Form
