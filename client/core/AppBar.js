@@ -29,7 +29,7 @@ export default function MenuAppBar() {
         <Toolbar>
           <Link component={RouterLink} to="/">
             <Typography variant="h5" className={classes.title}>
-               Hydro Mzl
+              Grow Mzl
             </Typography>
           </Link>
           <Link component={RouterLink} to="/signup">
