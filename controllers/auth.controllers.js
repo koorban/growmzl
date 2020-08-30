@@ -9,9 +9,7 @@ const signIn = async (req, res) => {
           "email" : req.body.email
         })
         if(!user) return res.status(401).json({ error: "User doesn't exist"})
-        
         user.comparePassword(req.body.password, function(err, isMatch) {
-            
             if(isMatch === true) {
                 
                 const token = jwt.sign({
