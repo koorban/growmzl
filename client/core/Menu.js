@@ -21,13 +21,15 @@ const useStyles = makeStyles((theme) => ({
   main: {
     paddingTop: 50,
     paddingBottom: 30,
-    color: '#fff'
+    color: '#fff',
+    fontFamily: 'cursive'
   },
   typography: {
     paddingTop: 10,
     paddingBottom: 10,
     color: '#fff',
     lineHeight: 2,
+    fontFamily: 'cursive'
   }
 }));
 
@@ -44,11 +46,11 @@ export default function Menu() {
       {menuData.map((data) => {
       return (
         <>
-          <Typography className={classes.typography}>
-            <Link component={RouterLink} to={data.url} className={classes.links}  color="inherit" variant="body2">
+          <Link component={RouterLink} to={data.url} className={classes.links} variant="body2">
+            <Typography className={classes.typography}>
               {data.title}
-            </Link>
-          </Typography>
+            </Typography>
+          </Link>
         </>
       )
       })}
