@@ -14,6 +14,7 @@ import Grid from '@material-ui/core/Grid';
 import MenuFlex from '../core/MenuFlex';
 import { create } from './api.contact';
 import Dialogue from './Dialogue';
+import contactImage from '../../dist/contactus.jpg';
 
 const useStyles = makeStyles({
     formControl: {
@@ -28,8 +29,8 @@ const useStyles = makeStyles({
     },
     title: {
         textAlign: 'center',
-        paddingBottom: 20,
-        paddingTop: 40
+        paddingBottom: 80,
+        paddingTop: 80
     },
     spacing: {
         paddingBottom: 200
@@ -40,6 +41,10 @@ const useStyles = makeStyles({
         backgroundColor: '#083818',
         color: '#fff'
     },
+    image: {
+        maxHeight: '78%',
+        width: '100%'
+    }
 });
 
 export default function Contact(){
@@ -86,13 +91,16 @@ export default function Contact(){
     return (
         <>
             <MenuFlex/>
-            <Grid container spacing={0} direction='column' alignItems='center' justify='center' style={{ minHeight: '80vh' }}>
+            <Grid container spacing={1} style={{ minHeight: '80vh' }}>
                 <Grid item xs={12} sm={12} md={12} lg={12}>
                     <Typography variant='h2' className={classes.title}>
                         Contact Us
                     </Typography>
                 </Grid>
-                <Grid item xs={12} className={classes.spacing}>
+                <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                    <img src={contactImage} className={classes.image}/>
+                </Grid>
+                <Grid item xs={12} sm={12} md={6} lg={6} xl={6} className={classes.spacing}>
                     <Card>
                         <Typography variant='h4' component='h2' className={classes.title}>
                             Contact Form
