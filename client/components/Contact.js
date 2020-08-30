@@ -36,7 +36,9 @@ const useStyles = makeStyles({
     },
     submit: {
         marginLeft: 100,
-        marginBottom: 8
+        marginBottom: 8,
+        backgroundColor: '#083818',
+        color: '#fff'
     },
 });
 
@@ -141,7 +143,7 @@ export default function Contact(){
                             />
                         </FormControl>
                         <CardActions>
-                            <Button color="primary" variant="contained" onClick={clickSubmit} className={classes.submit}>Submit</Button>
+                            <Button variant="contained" onClick={clickSubmit} className={classes.submit}>Submit</Button>
                             <Link to='/'>
                                 <Button variant="contained" className={classes.submit}>Cancel</Button>
                             </Link>
