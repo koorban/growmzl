@@ -5,8 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import MainAppBar from './core/AppBar';
 import Footer from './core/Footer';
 import CompanyTitle from './core/CompanyTitle';
-import Home from './core/Home';
-import SignUp from './components/Signup';
+import Home from './components/Home';
 import Upload from './components/Upload';
 import Products from './components/Products';
 import AllProducts from './components/AllProducts';
@@ -19,11 +18,9 @@ export default function MainRouter(){
     return (<div>
       <MainAppBar/>
       <CompanyTitle/>
-      <Footer/>
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/signin" component={SignIn}/>
-        <Route exact path="/signup" component={SignUp}/>
         <Route exact path="/upload" component={Upload}/>
         <Route exact path="/contact" component={Contact}/>
         <Route exact path="/about" component={About}/>
