@@ -12,7 +12,6 @@ const useStyles = makeStyles({
         paddingBottom: 20,
         textAlign: 'center',
         color: '#fff',
-        fontWeight: 'bold',
     },
     image: {
         minHeight: 240,
@@ -24,6 +23,9 @@ const useStyles = makeStyles({
         height: "100%",
         marginBottom: 60
     },
+    typography: {
+        fontFamily: 'cursive'
+    }
 });
 
 export default function CompanyTitle() {
@@ -33,10 +35,10 @@ export default function CompanyTitle() {
             <div className={classes.wrapper}>
                 <img src={backdropImage} className={classes.image}/>
                 <div className={classes.root}>
-                    <Typography variant="h1" component="h2">
+                    <Typography variant="h1" component="h2" className={classes.typography}>
                         Grow Mzl
                     </Typography>
-                    <Typography variant="h5">
+                    <Typography variant="h5" className={classes.typography}>
                         Est. 2020
                     </Typography>
                 </div>
