@@ -22,15 +22,17 @@ const useStyles = makeStyles({
   },
   title: {
       textAlign: 'center',
-      paddingTop: 40,
-      paddingBottom: 40
+      paddingTop: 80,
+      paddingBottom: 80
     },
     description: {
         textAlign: 'center',
         paddingBottom: 25
     },
-    button: {
-        margin: 'auto'
+    submit: {
+        margin: 'auto',
+        backgroundColor: '#083818',
+        color: '#fff'
     },
     spacing: {
         paddingBottom: 200
@@ -64,7 +66,7 @@ export default function ProductInfo({match}) {
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}>
                 <Typography variant="h1" component="h2" className={classes.title}>
-                    More Info
+                    Item Details
                 </Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}>
@@ -89,10 +91,10 @@ export default function ProductInfo({match}) {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Button size="medium" color="primary" variant="contained" className={classes.button}>
+                            <Button size="medium" variant="contained" className={classes.submit}>
                                 Add to Cart
                             </Button>
-                            <Button size="medium" color="primary" variant="contained" className={classes.button}>
+                            <Button size="medium" variant="contained" className={classes.submit}>
                                 Check Out Now
                             </Button>
                         </CardActions>
