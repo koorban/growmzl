@@ -22,9 +22,6 @@ const useStyles = makeStyles({
     paddingTop: 20,
     paddingBottom: 20,
     textAlign: 'center'
-  },
-  card: {
-    boxShadow: 2
   }
 });
 
