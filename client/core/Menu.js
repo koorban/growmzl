@@ -10,7 +10,7 @@ import  menuData from '../../models/MenuData';
 
 const useStyles = makeStyles((theme) => ({
   root:{
-    backgroundColor: '#E0E0E0',
+    backgroundColor: '#083818',
     minHeight: "100%",
     width: '100%',
     textAlign: 'center'
@@ -20,11 +20,14 @@ const useStyles = makeStyles((theme) => ({
   },
   main: {
     paddingTop: 50,
-    paddingBottom: 30
+    paddingBottom: 30,
+    color: '#fff'
   },
-  typographyLinks: {
+  typography: {
     paddingTop: 10,
-    paddingBottom: 10
+    paddingBottom: 10,
+    color: '#fff',
+    lineHeight: 2,
   }
 }));
 
@@ -41,7 +44,7 @@ export default function Menu() {
       {menuData.map((data) => {
       return (
         <>
-          <Typography className={classes.typographyLinks}>
+          <Typography className={classes.typography}>
             <Link component={RouterLink} to={data.url} className={classes.links}  color="inherit" variant="body2">
               {data.title}
             </Link>
