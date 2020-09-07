@@ -14,7 +14,7 @@ import FormControl from '@material-ui/core/FormControl';
 import MenuItem from '@material-ui/core/MenuItem';
 
 import MenuFlex from '../core/MenuFlex';
-import { create } from './api.product.js';
+import { create } from './Api/api.product';
 import Dialogue from './Dialogue';
 
 const useStyles = makeStyles({
@@ -36,7 +36,9 @@ const useStyles = makeStyles({
     },
     submit: {
         margin: 'auto',
-        marginBottom: 16
+        marginBottom: 16,
+        backgroundColor: '#083818',
+        color: '#fff'
     },
     spacing: {
         paddingBottom: 250
@@ -191,10 +193,10 @@ export default function uploadProduct() {
                         </Typography>)
                     }
                 </CardContent>
-                <CardActions>
+                <CardActions style={{justifyContent: 'center'}}>
                     <Button color="primary" variant="contained" onClick={clickSubmit} className={classes.submit}>Submit</Button>
-                    <RouterLink to='/' className={classes.submit}>
-                        <Button variant="contained">Cancel</Button>
+                    <RouterLink to='/'>
+                        <Button variant="contained" className={classes.submit}>Cancel</Button>
                     </RouterLink>
                 </CardActions>
             </Card>

@@ -10,8 +10,8 @@ import  menuData from '../../models/MenuData';
 
 const useStyles = makeStyles((theme) => ({
   root:{
-    backgroundColor: '#083818',
-    minHeight: "100%",
+    backgroundColor: 'rgba(8, 56, 24, 0.9)',
+    minHeight: '100%',
     width: '100%',
     textAlign: 'center'
   },

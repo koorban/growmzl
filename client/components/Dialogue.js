@@ -6,13 +6,22 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
+import { makeStyles } from '@material-ui/core/styles';
 import { Link as RouterLink } from 'react-router-dom';
+
+const useStyles = makeStyles({
+  submit: {
+    backgroundColor: '#083818',
+    color: '#fff'
+  }
+});
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function AlertDialogSlide(props) {
+  const classes = useStyles();
   const [open, setOpen] = useState(true);
 
   const handleClose = () => {
@@ -37,7 +46,7 @@ export default function AlertDialogSlide(props) {
         </DialogContent>
         <DialogActions>
         <RouterLink to='/'>
-            <Button onClick={handleClose} variant="contained" color="primary">
+            <Button onClick={handleClose} variant="contained" className={classes.submit}>
                 Close
             </Button>
         </RouterLink>
