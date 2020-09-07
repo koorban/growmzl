@@ -35,14 +35,14 @@ export default function MenuFlex() {
       
       {menuData.map((data) => {
       return (
-      <>
+        <>
           <Button variant="contained" className={classes.button}>
-              <Link component={RouterLink} to={data.url} className={classes.link}>
-                {data.title}
-              </Link>
+            <Link component={RouterLink} to={data.url} className={classes.link}>
+              {data.title}
+            </Link>
           </Button>
-      </>
-      )
+        </>
+        )
       })}
     </div>
   );
