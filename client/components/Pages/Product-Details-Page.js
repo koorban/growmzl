@@ -7,7 +7,7 @@ import ProductDetails from '../Page-Components/ProductDetails';
 export default function ProductInfoPage({ match }) {
 
     return (
-        <Grid container>
+        <Grid container style={{paddingLeft: '3em', paddingRight: '3em'}}>
             <Grid item xs={12} sm={12} md={12} lg={12}>
                 <MenuFlex/>
             </Grid>
