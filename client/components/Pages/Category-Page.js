@@ -5,7 +5,6 @@ import MenuFlex from '../../core/MenuFlex';
 import Title from '../Page-Components/Title';
 import Category from '../Page-Components/Category';
 
-
 const useStyles = makeStyles({
     spacing: {
         paddingBottom: 128,
@@ -14,7 +13,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function CategoryPage({ match }){
+export default function CategoryPage({ match }) {
     const classes = useStyles();
     
     return (
