@@ -9,6 +9,8 @@ import HomeComponent from '../Page-Components/HomeComponent';
 const UseStyles = makeStyles({
   spacing: {
     paddingBottom: 128,
+    paddingLeft: '3em',
+    paddingRight: '3em'
   },
 });
 
