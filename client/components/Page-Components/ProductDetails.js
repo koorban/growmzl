@@ -6,8 +6,9 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardMedia';
 import CardActions from '@material-ui/core/CardActions';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import Button from '@material-ui/core/Button';
 import { readByProductId } from '../Api/api.product';
+import Description from './ProductDescription';
+import ProductButton from './ProductDetailsButton';
 
 const useStyles = makeStyles({
     root: {
@@ -19,17 +20,12 @@ const useStyles = makeStyles({
     },
     title: {
       textAlign: 'center',
-      paddingTop: 80,
-      paddingBottom: 80
+      paddingTop: 40,
+      paddingBottom: 40
     },
     description: {
         textAlign: 'center',
         paddingBottom: 25
-    },
-    submit: {
-        margin: 'auto',
-        backgroundColor: '#083818',
-        color: '#fff'
     },
     spacing: {
         paddingBottom: 200
@@ -37,9 +33,8 @@ const useStyles = makeStyles({
 });
 
 export default function ProductDetails({id}) {
-   
     const classes = useStyles();
-    const [ product, setProduct] = useState([]);
+    const [ details, setDetails] = useState([]);
     
     useEffect(() => {
         const abortController = new AbortController();
@@ -49,7 +44,7 @@ export default function ProductDetails({id}) {
             if (data && data.error) {
                 console.log(data.error)
             } else {
-                setProduct(data)
+                setDetails(data)
             }
             return function cleanUp() {
                 abortController.abort();
@@ -63,28 +58,18 @@ export default function ProductDetails({id}) {
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
-                        image={product.imageUrl}
-                        title={product.name}
+                        image={details.imageUrl}
+                        title={details.name}
                     />
-                    <CardContent>
-                        <Typography gutterBottom variant="h4" component="h2" className={classes.title}>
-                            {product.name}
-                        </Typography>
+                    <CardContent className={classes.title}>
+                       <Description name={details.name} price={details.price} unit={details.unit}/>
                         <Typography variant="body2" color="textSecondary" component="p" className={classes.description}>
-                            Details: {product.description}
-                        </Typography>
-                        <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
-                            {product.price} COP / {product.unit}
+                            Details: {details.description}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button size="medium" variant="contained" className={classes.submit}>
-                        Add to Cart
-                    </Button>
-                    <Button size="medium" variant="contained" className={classes.submit}>
-                        Check Out Now
-                    </Button>
+                    <ProductButton />
                 </CardActions>
             </Card>
         </div>
