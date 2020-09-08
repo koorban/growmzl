@@ -60,7 +60,7 @@ export default function uploadProduct() {
         quantity: '',
         imageUrl: '',
         error: '',
-        redirect: false
+        dialogueOpen: false
     });
 
     const handleChange = name => event => {
@@ -77,12 +77,11 @@ export default function uploadProduct() {
             quantity: values.quantity || undefined,
             imageUrl: values.imageUrl || undefined
         }
-        console.log(newProduct)
         create(newProduct).then((data) => {
             if(data.error) {
                 setValues({...values, error: data.error})
             } else {
-                setValues({...values, error: '', redirect: true})
+                setValues({...values, error: '', dialogueOpen: true})
             }
         });
     };
