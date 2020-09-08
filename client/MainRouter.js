@@ -12,6 +12,7 @@ import PrivateRoute from './core/PrivateRoute';
 import Upload from './components/Upload';
 import Contact from './components/Contact';
 import SignIn from './components/SignIn';
+import Footer from './core/Footer';
 
 export default function MainRouter(){
   return (
@@ -27,6 +28,7 @@ export default function MainRouter(){
         <Route exact path="/contact" component={Contact}/>
         <Route exact path="/signin" component={SignIn}/>
       </Switch>
+      <Footer/>
     </div>
   );
 };
