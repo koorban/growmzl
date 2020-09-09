@@ -9,9 +9,9 @@ import CategoryPage from './components/Pages/Category-Page';
 import AllProductsPage from './components/Pages/All-Products-Page';
 import ProductDetailsPage from './components/Pages/Product-Details-Page';
 import PrivateRoute from './core/PrivateRoute';
-import Upload from './components/Upload';
-import Contact from './components/Contact';
-import SignIn from './components/SignIn';
+import AdminPage from './components/Pages/Admin';
+import Contact from './components/Page-Components/Contact';
+import SignIn from './components/Page-Components/SignIn';
 import Footer from './core/Footer';
 
 export default function MainRouter(){
@@ -24,7 +24,7 @@ export default function MainRouter(){
         <Route exact path="/products/list/all" component={AllProductsPage}/>
         <Route path="/products/by/:category" component={CategoryPage}/>
         <Route path="/products/product/:productId/" component={ProductDetailsPage}/>
-        <PrivateRoute exact path='/upload'  component={Upload}/>
+        <PrivateRoute exact path='/admin' component={AdminPage}/>
         <Route exact path="/contact" component={Contact}/>
         <Route exact path="/signin" component={SignIn}/>
       </Switch>
