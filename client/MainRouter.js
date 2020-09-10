@@ -9,12 +9,12 @@ import CategoryPage from './components/Pages/Category-Page';
 import AllProductsPage from './components/Pages/All-Products-Page';
 import ProductDetailsPage from './components/Pages/Product-Details-Page';
 import PrivateRoute from './core/PrivateRoute';
-import AdminPage from './components/Pages/Admin';
+import AdminPage from './components/Pages/Admin-Page';
 import Contact from './components/Page-Components/Contact';
 import SignIn from './components/Page-Components/SignIn';
 import Footer from './core/Footer';
 
-export default function MainRouter(){
+export default function MainRouter() {
   return (
     <div>
       <MainAppBar/>
