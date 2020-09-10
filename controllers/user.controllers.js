@@ -63,5 +63,14 @@ const remove = async (req, res) => {
     }
 };
 
-export default { create, read, update, remove, userById}
+const list = async (req, res) => {
+    try {
+        let users = await User.find().select('first_name last_name email')
+        res.json(users)
+    } catch(err) {
+        console.log(err)
+    }
+};
+
+export default { create, read, update, remove, userById, list}
 
