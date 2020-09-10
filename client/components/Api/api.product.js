@@ -50,9 +50,40 @@ const readByProductId = async (params, signal) => {
     }
 };
 
+const updateProduct = async(params, product) => {
+    console.log('PRINTING', product)
+    console.log('ID',params.id)
+    try {
+        let response = await fetch('/products/product/' + params.id, {
+            method: 'PUT',
+            headers: {
+                'Accept' : 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(product)
+        })
+        return await response.json()
+    } catch(err) {
+        console.log(err)
+    }
+};
+
+const deleteProduct = async(params) => {
+    try {
+        let response = await fetch('/products/product/' + params.id, {
+            method: 'DELETE',
+        })
+        return await response.json();
+    } catch(err) {
+        console.log(err)
+    }
+};
+
 export { 
     create,
     listByCategory,
     listAllProducts,
-    readByProductId
+    readByProductId,
+    updateProduct,
+    deleteProduct
 };
