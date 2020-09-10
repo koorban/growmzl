@@ -27,6 +27,7 @@ const listAll = async (req, res) => {
 };
 
 const read = async (req, res) => {
+    console.log(req.product)
     return res.json(req.product)
 };
 
@@ -62,7 +63,7 @@ const productById = async (req, res, next, id) => {
           return res.status(400).json({
               error: "Product not found"
             })
-      req.product = product
+      req.profile = product
       next()
     } catch (err) {
         return res.status(400).json({
