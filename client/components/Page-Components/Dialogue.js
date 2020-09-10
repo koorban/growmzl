@@ -20,7 +20,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function AlertDialogSlide(props) {
+export default function AlertDialogSlide({ message, title}) {
   const classes = useStyles();
   const [open, setOpen] = useState(true);
 
@@ -38,10 +38,10 @@ export default function AlertDialogSlide(props) {
         aria-labelledby="alert-dialog-slide-title"
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle id="alert-dialog-slide-title">{props.title}</DialogTitle>
+        <DialogTitle id="alert-dialog-slide-title">{title}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            {props.message}
+            {message}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
