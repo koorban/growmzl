@@ -5,12 +5,12 @@ import authCtrl from './../controllers/auth.controllers.js';
 const router = express.Router();
 
 router.route('/users').post(userCtrl.create)
+router.route('/users').get(userCtrl.list)
 
 router.route('/users/:userId')
-  .get(authCtrl.jwtRequired, userCtrl.read)
-  .put(authCtrl.jwtRequired, authCtrl.isAuthorized, userCtrl.update)
-  .delete(authCtrl.jwtRequired, authCtrl.isAuthorized, userCtrl.remove)
-
+  .get(userCtrl.read)
+  .put(userCtrl.update)
+  .delete(userCtrl.remove)
 router.param('userId', userCtrl.userById)
 
 export default router

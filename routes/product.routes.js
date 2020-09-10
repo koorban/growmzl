@@ -9,8 +9,8 @@ router.route('/list/all').get(productCtrl.listAll);
 router.route('/new').post(productCtrl.createProduct);
 
 router.route('/product/:productId')
-    .put(authCtrl.jwtRequired, authCtrl.isAuthorized, productCtrl.update)
-    .delete(authCtrl.jwtRequired, authCtrl.isAuthorized, productCtrl.remove)
+    .put(productCtrl.update)
+    .delete(productCtrl.remove)
     .get(productCtrl.read)
 router.param('productId', productCtrl.productById);
 
