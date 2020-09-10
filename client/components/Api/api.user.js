@@ -42,4 +42,43 @@ const signOut = async () => {
     }
 };
 
-export { createUser, signIn, signOut }
+const list = async (signal) => {
+    try {
+        let response = await fetch('/api/users', {
+            method: 'GET',
+            signal: signal
+        });
+        return await response.json();
+    } catch(err) {
+        console.log(err)
+    }
+};
+
+const updateUser = async(params, user) => {
+    try {
+        let response = await fetch('/api/users/' + params.id, {
+            method: 'PUT',
+            headers: {
+                'Accept' : 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user)
+        });
+        return await response.json();
+    } catch(err) {
+        console.log(err)
+    }
+};
+
+const removeUser = async(params) => {
+    try {
+        let response = await fetch('/api/users/' + params.id, {
+            method: 'DELETE'
+        })
+        return await response.json();
+    } catch(err) {
+        console.log(err)
+    }
+};
+
+export { createUser, signIn, signOut, list, updateUser, removeUser }
