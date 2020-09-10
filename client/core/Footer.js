@@ -16,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center'
   },
   signup: {
-    marginTop: 30,
-    marginBottom: 160
+    marginTop: 80,
+    marginBottom: 80
   },
   links: {
     marginBottom: 20
