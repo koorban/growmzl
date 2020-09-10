@@ -7,8 +7,10 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-import Upload from '../Page-Components/Upload';
-import EditProducts from '../Page-Components/EditProducts';
+import NewProduct from './Upload';
+import TableProducts from './TableProducts';
+import NewUser from './New-User';
+import TableUsers from './TableUsers';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -28,7 +30,7 @@ function TabPanel(props) {
       )}
     </div>
   );
-}
+};
 
 TabPanel.propTypes = {
   children: PropTypes.node,
@@ -41,7 +43,7 @@ function a11yProps(index) {
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`,
   };
-}
+};
 
 const useStyles = makeStyles({
   root: {
@@ -58,31 +60,31 @@ export default function SimpleTabs() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
+    setValue(newValue);
+  };
 
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.appbar}>
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Edit Products" {...a11yProps(0)} />
+          <Tab label="List Products" {...a11yProps(0)} />
           <Tab label="Create New Product" {...a11yProps(1)} />
-          <Tab label="Edit Users" {...a11yProps(2)} />
+          <Tab label="List Users" {...a11yProps(2)} />
           <Tab label="Create New User" {...a11yProps(3)} />
           <Tab label="Log Out" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <EditProducts/>
+        <TableProducts/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Upload/>
+        <NewProduct/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Edit Users
+        <TableUsers/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Create New User
+        <NewUser/>
       </TabPanel>
       <TabPanel value={value} index={4}>
         Log Out
