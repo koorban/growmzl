@@ -10,6 +10,10 @@ const useStyles = makeStyles({
     },
     root: {
         textAlign: 'center',
+        border: '3px solid',
+        borderColor:'#bfbfbf',
+        borderRadius: 10,
+        padding: 15
     },
     button: {
         marginTop: 20,
