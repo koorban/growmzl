@@ -47,6 +47,7 @@ const useStyles = makeStyles({
 
 export default function SignIn() {
     const classes = useStyles();
+    
     const [ values, setValues ] = useState({
         email: '',
         password: '',
@@ -83,7 +84,7 @@ export default function SignIn() {
             </Typography>
             <Card className={classes.card}>
                 <Typography variant='h5' className={classes.title}>
-                    Grow MZL - Admin
+                    Grow MZL Admin
                 </Typography>
                 <TextField label="Email" value={values.email} onChange={handleChange('email')} className={classes.textField} margin="normal"/>
                 <TextField label="Password" value={values.password} onChange={handleChange('password')} className={classes.textField} margin="normal"/>
