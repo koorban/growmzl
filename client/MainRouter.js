@@ -12,11 +12,10 @@ import PrivateRoute from './core/PrivateRoute';
 import AdminPage from './components/Pages/Admin-Page';
 import Contact from './components/Page-Components/Contact';
 import SignIn from './components/Page-Components/SignIn';
-import Footer from './core/Footer';
 
 export default function MainRouter() {
   return (
-    <div>
+    <>
       <MainAppBar/>
       <CompanyTitle/>
       <Switch>
@@ -29,6 +28,6 @@ export default function MainRouter() {
         <Route exact path="/signin" component={SignIn}/>
       </Switch>
       <Footer/>
-    </div>
+    </>
   );
 };
