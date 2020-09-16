@@ -15,7 +15,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 import contactImage from '../../../dist/contactus.jpg';
 import { create } from '../Api/api.contact';
-import Dialogue from './Dialogue';
+import DialogueContact from './DialogueContact';
 import MenuFlex from '../../core/MenuFlex';
 
 const useStyles = makeStyles({
@@ -82,7 +82,6 @@ export default function Contact(){
             reason: info.reason || undefined,
             message: info.message || undefined,
         }
-        console.log(newContact)
         create(newContact).then((data) => {
             if(data.error) {
                 setInfo({ ...info, error: data.error})
@@ -97,7 +96,7 @@ export default function Contact(){
 
     if (info.dialogueOpen) {
         return (
-            <Dialogue message={message} title={title}/>
+            <DialogueContact message={message} title={title}/>
         )
     }
     return (
