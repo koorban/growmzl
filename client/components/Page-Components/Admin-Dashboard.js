@@ -71,7 +71,6 @@ export default function SimpleTabs() {
           <Tab label="Create New Product" {...a11yProps(1)} />
           <Tab label="List Users" {...a11yProps(2)} />
           <Tab label="Create New User" {...a11yProps(3)} />
-          <Tab label="Log Out" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -85,9 +84,6 @@ export default function SimpleTabs() {
       </TabPanel>
       <TabPanel value={value} index={3}>
         <NewUser/>
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Log Out
       </TabPanel>
     </div>
   );
