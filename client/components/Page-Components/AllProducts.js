@@ -5,7 +5,6 @@ import  ProductCard from './ProductCard';
 
 
 export default function AllProducts() {
-
     const [products, setProducts] = useState([]);
 
     useEffect(()=> {
