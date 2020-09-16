@@ -22,7 +22,8 @@ export default function FooterHelp() {
             </div>
             <div style={{marginBottom: 10}}>
                 <Typography variant='body2'>
-                    Browse our articles or <Link href="/contact" variant="body1">
+                    Browse our articles or 
+                    <Link href="/contact" variant="body1" color="inherit">
                         Contact us
                     </Link>
                 </Typography>
