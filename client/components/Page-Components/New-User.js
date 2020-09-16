@@ -51,6 +51,7 @@ const useStyles = makeStyles({
 
 export default function NewUser() {
     const classes = useStyles();
+    
     const [user, setUser] = useState({
         first_name: '',
         last_name: '',
@@ -80,7 +81,7 @@ export default function NewUser() {
         });
     };
 
-    const message = `Product "${user.first_name}" was successfully created. Contact admin@growmzl.com for any questions. Thank you`;
+    const message = `Hello. The account for "${user.first_name}" was successfully created. Contact admin@growmzl.com for any questions. Thank you`;
     const title='New User successfully created!';
 
     if (user.dialogueOpen) {
